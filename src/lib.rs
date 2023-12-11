@@ -138,6 +138,12 @@ pub struct Matches<'a> {
     query: &'a Frame,
 }
 
+impl<'a> Matches<'a> {
+    pub fn len(&self) -> usize {
+        self.matches.len()
+    }
+}
+
 pub fn matches<'a>(train: &'a Frame, query: &'a Frame, threshold: f32) -> Matches<'a> {
 //fn brute_force_match(query_dcs: &Mat, train_dcs: &Mat, threshold: f32) -> Result<Vector<DMatch>> {
     let mut all_matches = Vector::new();
